@@ -1,7 +1,7 @@
 <template>
   <section class="msite">
     <!--首页头部-->
-    <NavHeader title="昌平区北七家镇宏福科技园">
+    <NavHeader :title="address.name || '正在定位中...'">
       <span class="header_search" slot="left">
         <i class="iconfont icon-sousuo"></i>
       </span>
@@ -9,7 +9,6 @@
         <span class="header_login_text">登录|注册</span>
       </span>
     </NavHeader>
-
     <!--首页导航-->
     <nav class="msite_nav">
       <div class="swiper-container">
@@ -131,9 +130,21 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   import ShopList from '../../components/ShopList/ShopList.vue'
+
   export default {
-    components : {
+
+    mounted () {
+      // 异步获取商家列表数据(后台==>state)
+      this.$store.dispatch('getShops')
+    },
+
+    computed: {
+      ...mapState(['address'])
+    },
+
+    components: {
       ShopList
     }
   }
@@ -144,7 +155,6 @@
 
   .msite  //首页
     width 100%
-
     .msite_nav
       bottom-border-1px(#e4e4e4)
       margin-top 45px
@@ -195,5 +205,4 @@
           color #999
           font-size 14px
           line-height 20px
-
 </style>

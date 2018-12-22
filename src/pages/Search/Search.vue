@@ -9,14 +9,14 @@
 </template>
 
 <script>
-  import NavHeader from "../../components/NavHeader/NavHeader";
+  import NavHeader from "../../components/NavHeader/NavHeader.vue";
+
   export default {components: {NavHeader}}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .search  //搜索
     width 100%
-
     .search_form
       clearFix()
       margin-top 45px

@@ -11,37 +11,34 @@ export default [
   {
     path: '/msite',
     component: MSite,
-    meta :{
-      showFooter : true
+    meta: {
+      showFooter: true
     }
   },
   {
     path: '/search',
     component: Search,
-    meta :{
-      showFooter : true
+    meta: {
+      showFooter: true
     }
   },
   {
     path: '/order',
     component: Order,
-    meta :{
-      showFooter : true
+    meta: {
+      showFooter: true
     }
   },
   {
     path: '/profile',
     component: Profile,
-    meta :{
-      showFooter : true
+    meta: {
+      showFooter: true
     }
   },
   {
     path: '/login',
-    component: Login,
-    meta :{
-      showFooter : true
-    }
+    component: Login
   },
 
   {
